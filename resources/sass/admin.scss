@@ -1,20 +1,29 @@
 .header{
     background-color:#519BF5;
     font-family:Circular;
-    padding:20px;
+    height:90px;
+    color:white;
 
 }
 .header-logo{
+    font-family:fantasy;
     float:left;
     font-size:35px;
-    color:white;
+    padding:20px 80px;
 }
 
 .header-list{
-    float:left;
+    float:right;
     
 }
 .header-list li{
+    
     float:left;
-    color:white;
+    padding:30px 18px;
+    list-style:none;
+}
+
+.top-wrapper{
+    background-image:no-person-3221109_1920;
+    background-size:cover;
 }

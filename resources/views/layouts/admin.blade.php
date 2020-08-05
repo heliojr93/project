@@ -36,8 +36,11 @@
                     <li>ログイン</li>
                 </ul>
             </div>
-            
         </div>
+        <main class="py-4">
+            {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+            @yield('content')
+        </main>
 
     </body>
 </html>
