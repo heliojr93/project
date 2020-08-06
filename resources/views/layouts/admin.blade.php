@@ -26,9 +26,10 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
-        <a href="{{ url('/') }}"><img src="{{ asset('/secure_asset/image/no-person-3221109_1920.jpg') }}">
+        
     </head>
     <body>
+        
         <div class='header'>
             <div class='header-logo'>Musics Random</div>
             <div class='header-list'>
