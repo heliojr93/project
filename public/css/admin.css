@@ -1,5 +1,7 @@
+@charset "UTF-8";
+
 .header {
-  background-color: #519BF5;
+  background-color: #1C1E22;
   font-family: Circular;
   height: 90px;
   color: white;
@@ -23,7 +25,22 @@
 }
 
 .top-wrapper {
-  background-image: url(/images/no-person-3221109_1920.jpg?69fda53b1a035651bb82ec78b5ed3261);
   background-size: cover;
+  background-image: url(/images/headphone.jpg?1df5799c8dbd077135d5fad105b83fa8);
+  height: 550px;
+  width: auto;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1170px;
+  padding: 100px 15px;
+}
+
+.container h1 {
+  font-size: 50px;
+  opacity: 0.9;
 }
 

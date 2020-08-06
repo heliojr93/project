@@ -1,5 +1,5 @@
 .header{
-    background-color:#519BF5;
+    background-color:#1C1E22;
     font-family:Circular;
     height:90px;
     color:white;
@@ -25,7 +25,22 @@
 }
 
 .top-wrapper{
-    background-image:url("public/secure_asset/image/no-person-3221109_1920.jpg");
+    //background-image:url("../secure_asset/image/no-person-3221109_1920.jpg");
     background-size:cover;
-    
+    background-image:url("../images/headphone.jpg");
+  　height:550px;
+  　width:auto;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1170px;
+  　padding: 100px 15px;
+}
+
+.container h1{
+    font-size:50px;
+    opacity:0.9;
 }
