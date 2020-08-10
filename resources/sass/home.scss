@@ -2,7 +2,6 @@
     background-color:#1C1E22;
     height:90px;
     color:white;
-    
 }
 .header-logo{
     float:left;
@@ -17,20 +16,21 @@
     float:left;
     list-style:none;
     padding:30px 18px;
-    opacity:0.7;
 }
 .logar{
     display:block;
     color:white;
+    opacity:0.7;
 }
 .logar:hover{
     color:white;
+    opacity:1;
     
 }
 .top-embrulho{
     background-image:url("../images/headphone.jpg");
     background-size:cover;
-    height:550px;
+    height:700px;
     text-align:center;
     width:auto;
     
@@ -44,4 +44,17 @@
     color:white;
     font-size:50px;
     opacity:0.8;
+    
+}
+.check{
+    color:#5AB171;
+}
+.introduction{
+    padding-top:50px;
+}
+.list{
+    color:white;
+    opacity:0.8;
+    font-size:30px;
+    list-style:none;
 }

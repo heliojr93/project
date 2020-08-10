@@ -6,7 +6,13 @@
         <div class=conteudo>
             <h1>あなたのためだけのプレイリストを作ったり、</h1>
             <h1>楽曲や音楽を発見しよう。</h1>
-        </div>
-            
+            <div class='introduction'>
+                <ul>
+                    <li class='list'><span class='check'>✓</span>新しい音楽に出会おう</li>
+                    <li class='list'><span class='check'>✓</span>自分好みのプレイリストを作ろう</li>
+                    <li class='list'><span class='check'>✓</span>アーティストをフォローして最新の曲を聞こう</li>
+                </ul>
+            </div>
+        </div>    
     </div> 
 @endsection
