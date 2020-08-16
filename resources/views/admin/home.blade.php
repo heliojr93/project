@@ -13,6 +13,14 @@
                     <li class='list'><span class='check'>✓</span>アーティストをフォローして最新の曲を聞こう</li>
                 </ul>
             </div>
+            <div class='btn-embrulho'>
+                <a href='#' class='btn sign'>新規登録はこちら</a>
+            </div>
         </div>    
-    </div> 
+    </div>
+    <footer>
+        <div class='footer'>
+            <p>© 2020 Music Random, Inc.</p>
+        </div>
+    </footer>
 @endsection

@@ -29,38 +29,7 @@
         
     </head>
     <body>
-        
-        <div class='header'>
-            
-            <div class='header-logo'>Musics Random</div>
-            <div class='header-list'>
-                <ul>
-                    <li>
-                        <a href="#" class="logar">Musics Randomとは</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('register') }}" class="logar">登録する</a>
-                    </li>
-                    <li>
-                        @guest
-                            <a class="logar" href="{{ route('login') }}">ログイン</a>
-                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-                        @else
-                        <a class="logar" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">ログアウト
-                                        
-                                    </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    @endguest
-
-                    </li>
-                </ul>
-            </div>
-        </div>
         <main>
             {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
             @yield('content')

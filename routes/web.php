@@ -17,4 +17,19 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
 Route::get('/','HomeController@index');
+
+Route::group(['middleware' => 'auth:admin'], function () {
+
+});
+Route::group(['middleware' => 'auth:user'], function () {
+
+});
+
+
