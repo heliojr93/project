@@ -9,6 +9,6 @@ class MyProfileController extends Controller
 {
     //以下を追加
     public function index(){
-        return view('admin.myprofile');
+        return view('admin.home');
     }
 }

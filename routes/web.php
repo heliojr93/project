@@ -25,11 +25,15 @@ Auth::routes();
 
 Route::get('/','HomeController@index');
 
-Route::group(['middleware' => 'auth:admin'], function () {
+Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
+    Route::get('/home','Admin\MyProfileController@index');
 
 });
 Route::group(['middleware' => 'auth:user'], function () {
 
 });
-
-
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', function () { return redirect('/admin/home'); });
+    Route::get('login', 'Admin\LoginController@showloginform')->name('admin.login');
+    Route::post('login', 'Admin\LoginController@login');
+ });
