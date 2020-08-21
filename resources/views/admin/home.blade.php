@@ -3,11 +3,17 @@
 @section('title', 'Music Random-MyProfile')
 
 @section('content_header')
-    <h1>abc</h1>
+    <h1>音楽をアップロード</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div class='music-upload'>
+       <form method='post' action="{{action('Admin\MyProfileController@action_upload}}">
+            <imput type='file' name='upload-file'><br><br>
+            <imput type='submit' value='送信'>
+        </form>
+    </div>
+        
 @stop
 
 @section('css')
