@@ -17,7 +17,7 @@ class MyProfileController extends Controller
         $config = array(
         	'path' => DOCROOT.'files',
         	'randomize' => true,
-        	'ext_whitelist' => array('img', 'jpg', 'jpeg', 'gif', 'png'),
+        	'ext_whitelist' => array('img', 'jpg', 'jpeg', 'gif', 'png','mp3'),
         );
         
         // $_FILES 内のアップロードされたファイルを処理する
@@ -40,7 +40,18 @@ class MyProfileController extends Controller
         	// $file['errors'] は発生したエラーの内容を含む配列で、
         	// 配列の要素は 'error' と 'message' を含む配列
         }
-                
+        
         return View::forge('admin.home');
+    }
+    public function create(Request $request){
+        //validationを行う
+        $this->validate($request,Music::$rules);
+        $music=new Music;
+        $form=$request->all();
+        //データを保存する
+        $music->fill($form);
+        $music->save();
+        
+        return view('admin.music-database');
     }
 }

@@ -15,6 +15,7 @@ class CreateMusicsTable extends Migration
     {
         Schema::create('musics', function (Blueprint $table) {
             $table->id();
+            $table->string('artist-name');
             $table->string('music-name');
             $table->string('genre');
             $table->string('upload-file');
