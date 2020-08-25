@@ -49688,7 +49688,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\nError: ENOENT: no such file or directory, open '/home/ec2-user/environment/spotify-clone/resources/sass/admin/home.scss'\n    at runLoaders (/home/ec2-user/environment/spotify-clone/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /home/ec2-user/environment/spotify-clone/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /home/ec2-user/environment/spotify-clone/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at process.nextTick (/home/ec2-user/environment/spotify-clone/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:85:15)\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)");
 
 /***/ }),
 

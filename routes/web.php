@@ -27,8 +27,7 @@ Route::get('/','HomeController@index');
 
 Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
     Route::get('/home','Admin\MyProfileController@index');
-    Route::post('/home','Admin\MyProfileController@action_upload');
-    Route::post('/home','Admin\MyProfileController@create');
+    Route::post('/music/create','Admin\MyProfileController@create');
 
 });
 Route::group(['middleware' => 'auth:user'], function () {

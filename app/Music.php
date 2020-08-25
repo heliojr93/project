@@ -10,9 +10,9 @@ class Music extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
-        'artist-name'=>'required',
-        'music-name' => 'required',
+        'artist_name'=>'required',
+        'music_name' => 'required',
         'genre' => 'required',
-        'upload-file'=>'required',
+        'upload_file'=>'required|mimes:mp3,mp4',
     );
 }

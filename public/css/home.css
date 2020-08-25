@@ -1,0 +1,110 @@
+.header {
+  background-color: #1C1E22;
+  height: 90px;
+  color: white;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.header-logo {
+  float: left;
+  font-family: fantasy;
+  padding: 20px 80px;
+  font-size: 35px;
+}
+
+.header-list {
+  float: right;
+}
+
+.header-list li {
+  float: left;
+  list-style: none;
+  padding: 30px 18px;
+}
+
+.logar {
+  display: block;
+  color: white;
+  opacity: 0.7;
+}
+
+.logar:hover {
+  color: white;
+  opacity: 1;
+}
+
+.top-embrulho {
+  background-image: url(/images/headphone.jpg?1df5799c8dbd077135d5fad105b83fa8);
+  background-size: cover;
+  height: 700px;
+  text-align: center;
+  width: auto;
+  margin-top: 70px;
+}
+
+.conteudo {
+  margin: 0 auto;
+  padding: 100px 15px;
+}
+
+.conteudo h1 {
+  color: white;
+  font-size: 50px;
+  opacity: 0.8;
+}
+
+.check {
+  color: #5AB171;
+}
+
+.introduction {
+  margin-top: 50px;
+}
+
+.introduction ul {
+  padding-left: 0;
+  display: inline-block;
+}
+
+.list {
+  color: white;
+  opacity: 0.8;
+  font-size: 30px;
+  list-style: none;
+}
+
+.btn-embrulho {
+  margin: 20px 0px;
+}
+
+.sign {
+  background-color: #7D7D7D;
+}
+
+.btn {
+  padding: 8px 24px;
+  opacity: 0.8;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+}
+
+.btn:hover {
+  opacity: 1;
+  color: white;
+}
+
+footer {
+  height: 70px;
+  background-color: #8A8A8A;
+}
+
+.footer p {
+  float: left;
+  padding: 20px 10px;
+  color: white;
+}
+
