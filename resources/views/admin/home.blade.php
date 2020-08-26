@@ -49,13 +49,16 @@
                 <input type='submit' value='送信'>
             </form>
         </div>
+        <div class='btn-wrapper'>
+            <a href='#' class='btn music-data'>曲のデータ一覧</a>
+        </div>
     </div>
         
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="/resources/sass/admin/home.scss">
+    <link rel="stylesheet" href="/resources/sass/admin/adminlte.scss">
 
 @stop
 

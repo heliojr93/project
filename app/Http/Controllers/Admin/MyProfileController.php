@@ -16,7 +16,7 @@ class MyProfileController extends Controller
     
     public function create(Request $request){
         //validationを行う
-        $this->validate($request,Music::$rules);
+        //$this->validate($request,Music::$rules);
         $music=new Music;
         $form=$request->all();
         //データを保存する
