@@ -50,7 +50,7 @@
             </form>
         </div>
         <div class='btn-wrapper'>
-            <a href='#' class='btn music-data'>曲のデータ一覧</a>
+            <a href="{{action('Admin\MyProfileController@music_data')}}" class='btn music-data'>曲のデータ一覧</a>
         </div>
     </div>
         
@@ -58,7 +58,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="/resources/sass/admin/adminlte.scss">
+    <link href="{{ secure_asset('css/adminlte.css') }}" rel="stylesheet">
 
 @stop
 

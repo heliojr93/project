@@ -29,4 +29,14 @@ class MyProfileController extends Controller
     
         return redirect('admin/home');
     }
+    
+    public function music_data(){
+        $musics_data=Music::all();
+        $error=array();
+        return view('admin.music_data',[
+            'musics_data'=>$musics_data,
+            'error'=>$error
+            
+            ]);
+    }
 }
