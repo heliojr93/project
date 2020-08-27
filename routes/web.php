@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
     Route::get('/home/music_data','Admin\MyProfileController@music_data');
     Route::get('/home/edit','Admin\MyProfileController@edit');
     Route::post('/home/edit','Admin\MyProfileController@update');
+    Route::get('/home/delete','Admin\MyProfileController@delete');
 
 });
 Route::group(['middleware' => 'auth:user'], function () {

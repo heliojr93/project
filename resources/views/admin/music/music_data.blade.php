@@ -31,6 +31,9 @@
                 <div>
                     <a href="{{action('Admin\MyProfileController@edit',['id'=>$music->id])}}">編集</a>
                 </div>
+                <div>
+                    <a href="{{action('Admin\MyProfileController@delete',['id'=>$music->id])}}">削除</a>
+                </div>
             </td>
        </tr>
  
