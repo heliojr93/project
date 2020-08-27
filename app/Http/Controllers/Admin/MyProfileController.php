@@ -48,4 +48,19 @@ class MyProfileController extends Controller
       return view('admin.music.edit', ['musics_form' => $musics_data]);
         
     }
+    
+    public function update(Request $request){
+        
+        // Validationをかける
+        $this->validate($request, Music::$rules);
+        // Music Modelからデータを取得する
+        $musics_data = Music::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $musics_form = $request->all();
+        unset($musics_form['_token']);
+    
+        // 該当するデ ータを上書きして保存する
+        $musics_data->fill($musics_form)->save();
+        return redirect('admin/music/musics_data');
+    }
 }

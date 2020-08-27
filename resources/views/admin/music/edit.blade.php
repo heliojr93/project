@@ -8,7 +8,7 @@
 
 @section('content')
     <div class='music_upload'>
-            <form method='post' action="{{action('Admin\MyProfileController@create')}}" enctype="multipart/form-data"><div class='content'>
+            <form method='post' action="{{action('Admin\MyProfileController@update')}}" enctype="multipart/form-data"><div class='content'>
                 @if (count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $e)
@@ -19,19 +19,19 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="music_name">アーティスト名</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="artist_name" value="{{ $profiles_form->artist_name }}">
+                        <input type="text" class="form-control" name="artist_name" value="{{ $musics_form->artist_name }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="music-name">曲名</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="music_name" value="{{ $profiles_form->music_name }}">
+                        <input type="text" class="form-control" name="music_name" value="{{ $musics_form->music_name }}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2" for="genre">ジャンル</label>
                     <div class="col-sm-4">
-                        <select name='genre' value="{{ $profiles_form->genre }}" >
+                        <select name='genre' value="{{ $musics_form->genre }}" >
                             <option value='-'>ー</option>
                             <option value='selection-list' disabled>選択リスト</option>
                             <option value='j-pop'>J-POP</option>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                         
-                <input type='file' name='upload_file'><br><br>
+                <input type='file' name='upload_file' value="{{ $musics_form->upload_file }}" ><br><br>
                 {{ csrf_field() }}
                 <input type='submit' value='更新'>
             </form>

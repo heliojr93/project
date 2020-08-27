@@ -29,7 +29,7 @@
            <td>{{ $music->genre }}</td>
            <td>
                 <div>
-                    <a href="{{action('Admin\MyProfileController@edit',['id'=>$musics_data->id])}}">編集</a>
+                    <a href="{{action('Admin\MyProfileController@edit',['id'=>$music->id])}}">編集</a>
                 </div>
             </td>
        </tr>

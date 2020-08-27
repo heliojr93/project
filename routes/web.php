@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
     Route::post('/music/create','Admin\MyProfileController@create');
     Route::get('/home/music_data','Admin\MyProfileController@music_data');
     Route::get('/home/edit','Admin\MyProfileController@edit');
+    Route::post('/home/edit','Admin\MyProfileController@update');
 
 });
 Route::group(['middleware' => 'auth:user'], function () {
