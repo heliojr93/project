@@ -14,20 +14,28 @@
     <?php } ?>
     
     
- 
-    @foreach($musics_data as $music)
+    <table border="1">
         <tr>
             <th>  ID  </th>
-            <td>{{ $music->id }}</td>
             <th>  アーティスト名  </th>
-            <td> {{ $music->artist_name }}</td>
             <th>  曲名  </th>
-            <td>{{ $music->genre }}</td>
+            <th>  ジャンル  </th>
         </tr>
-        
-       
+    @foreach($musics_data as $music)
+       <tr>
+           <td>{{ $music->id }}</td>
+           <td>{{ $music->artist_name }}</td>
+           <td>{{ $music->music_name }}</td>
+           <td>{{ $music->genre }}</td>
+           <td>
+                <div>
+                    <a href="{{action('Admin\MyProfileController@edit',['id'=>$musics_data->id])}}">編集</a>
+                </div>
+            </td>
+       </tr>
  
     @endforeach
+    </table>
 @stop
 
 @section('css')

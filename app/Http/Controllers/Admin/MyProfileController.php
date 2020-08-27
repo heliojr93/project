@@ -33,10 +33,19 @@ class MyProfileController extends Controller
     public function music_data(){
         $musics_data=Music::all();
         $error=array();
-        return view('admin.music_data',[
+        return view('admin.music.music_data',[
             'musics_data'=>$musics_data,
             'error'=>$error
             
             ]);
+    }
+    public function edit(Request $request){
+      // Profiles Modelからデータを取得する
+      $musics_data = Music::find($request->id);
+      if (empty($musics_data)) {
+        abort(404);    
+      }
+      return view('admin.music.edit', ['musics_form' => $musics_data]);
+        
     }
 }
