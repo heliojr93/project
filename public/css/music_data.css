@@ -1,0 +1,15 @@
+.edit {
+  display: inline-block;
+  color: black;
+  opacity: 0.8;
+}
+
+.edit:hover {
+  color: black;
+  opacity: 1;
+}
+
+.music_table {
+  text-align: center;
+}
+

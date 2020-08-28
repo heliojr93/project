@@ -14,12 +14,12 @@
     <?php } ?>
     
     
-    <table border="1">
+    <table border="1" class='music_table'>
         <tr>
-            <th>  ID  </th>
-            <th>  アーティスト名  </th>
-            <th>  曲名  </th>
-            <th>  ジャンル  </th>
+            <th width='10%'>  ID  </th>
+            <th width='29%'>  アーティスト名  </th>
+            <th width='29%'>  曲名  </th>
+            <th width='29%'>  ジャンル  </th>
         </tr>
     @foreach($musics_data as $music)
        <tr>
@@ -29,10 +29,10 @@
            <td>{{ $music->genre }}</td>
            <td>
                 <div>
-                    <a href="{{action('Admin\MyProfileController@edit',['id'=>$music->id])}}">編集</a>
+                    <a class='edit' href="{{action('Admin\MyProfileController@edit',['id'=>$music->id])}}">編集</a>
                 </div>
                 <div>
-                    <a href="{{action('Admin\MyProfileController@delete',['id'=>$music->id])}}">削除</a>
+                    <a class='edit' href="{{action('Admin\MyProfileController@delete',['id'=>$music->id])}}">削除</a>
                 </div>
             </td>
        </tr>
@@ -43,6 +43,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link href="{{ secure_asset('css/music_data.css') }}" rel="stylesheet">
 @stop
 
 @section('js')

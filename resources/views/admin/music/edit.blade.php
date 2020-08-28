@@ -43,7 +43,7 @@
                         </select>
                     </div>
                 </div>
-                        
+                <input type="hidden" name="id" value="{{ $musics_form->id }}">        
                 <input type='file' name='upload_file' value="{{ $musics_form->upload_file }}" ><br><br>
                 {{ csrf_field() }}
                 <input type='submit' value='更新'>

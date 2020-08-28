@@ -61,7 +61,7 @@ class MyProfileController extends Controller
     
         // 該当するデ ータを上書きして保存する
         $musics_data->fill($musics_form)->save();
-        return redirect('admin/music/music_data');
+        return redirect('admin/home/music_data');
     }
     
     public function delete(Request $request){
@@ -69,6 +69,7 @@ class MyProfileController extends Controller
       $musics_data = Music::find($request->id);
       // 削除する
       $musics_data->delete();
-      return redirect('admin/music/music_data');
+      return redirect('admin/home/music_data');
+        
     }
 }
