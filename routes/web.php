@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
 
 });
 Route::group(['middleware' => 'auth:user'], function () {
+    Route::get('/user/index','User\UserController@index');
 
 });
 Route::group(['prefix' => 'admin'], function() {
