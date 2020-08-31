@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
                 $redirectPath = '/admin/index';
                 break;
             default:
-                $redirectPath = '/';
+                $redirectPath = '/user/index';
                 break;
         }
  
