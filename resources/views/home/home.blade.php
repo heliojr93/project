@@ -14,7 +14,7 @@
                 </ul>
             </div>
             <div class='btn-embrulho'>
-                <a href='#' class='btn sign'>新規登録はこちら</a>
+                <a href="{{ route('register') }}" class='btn sign'>新規登録はこちら</a>
             </div>
         </div>    
     </div>

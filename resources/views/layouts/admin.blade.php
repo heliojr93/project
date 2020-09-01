@@ -27,16 +27,17 @@
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
         
+        
     </head>
     <body>
         
         <div class='header'>
             
-            <div class='header-logo'>Musics Random</div>
+            <div class='header-logo'>Musics <span>Random</span></div>
             <div class='header-list'>
                 <ul>
                     <li>
-                        <a href="#" class="logar">Musics Randomとは</a>
+                        <a href="#" class="logar">Musics <span>Random</span>とは</a>
                     </li>
                     <li>
                         <a href="{{ route('register') }}" class="logar">登録する</a>

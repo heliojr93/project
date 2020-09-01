@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth:admin','prefix'=>'admin'], function () {
     Route::get('/home/edit','Admin\MyProfileController@edit');
     Route::post('/home/edit','Admin\MyProfileController@update');
     Route::get('/home/delete','Admin\MyProfileController@delete');
+    Route::get('/user_list', 'Admin\MyProfileController@user_list');
+    Route::get('/delete','Admin\MyProfileController@delete_user');
 
 });
 Route::group(['middleware' => 'auth:user'], function () {

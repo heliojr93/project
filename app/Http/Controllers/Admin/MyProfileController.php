@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Music;
+use App\User;
 
 class MyProfileController extends Controller
 {
@@ -72,4 +73,25 @@ class MyProfileController extends Controller
       return redirect('admin/home/music_data');
         
     }
+    
+    public function user_list(){
+        $user_list=User::all();
+        $error=array();
+        return view('admin.user_list',[
+            'user_list'=>$user_list,
+            'error'=>$error
+            ]);
+        
+    }
+    
+    public function delete_user(Request $request){
+        // 該当するMusic Modelを取得
+      $user_list = User::find($request->id);
+      // 削除する
+      $user_list->delete();
+      return redirect('admin/user_list');
+        
+    }
+    
+   
 }
