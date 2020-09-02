@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/adminlte.css": "/css/adminlte.css",
     "/css/music_data.css": "/css/music_data.css",
-    "/css/user/index.css": "/css/user/index.css"
+    "/css/user/index.css": "/css/user/index.css",
+    "/css/home.css": "/css/home.css"
 }

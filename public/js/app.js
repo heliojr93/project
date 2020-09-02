@@ -634,6 +634,17 @@ eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourc
 
 /***/ }),
 
+/***/ "./resources/sass/home.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/home.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9ob21lLnNjc3M/MjdkMCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiIuL3Jlc291cmNlcy9zYXNzL2hvbWUuc2Nzcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIHJlbW92ZWQgYnkgZXh0cmFjdC10ZXh0LXdlYnBhY2stcGx1Z2luIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/sass/home.scss\n");
+
+/***/ }),
+
 /***/ "./resources/sass/user/index.scss":
 /*!****************************************!*\
   !*** ./resources/sass/user/index.scss ***!
@@ -646,9 +657,9 @@ eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourc
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin/adminlte.scss ./resources/sass/admin/music_data.scss ./resources/sass/user/index.scss ***!
-  \**************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin/adminlte.scss ./resources/sass/admin/music_data.scss ./resources/sass/user/index.scss ./resources/sass/home.scss ***!
+  \*****************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -656,7 +667,8 @@ __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/js/ap
 __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/admin/adminlte.scss */"./resources/sass/admin/adminlte.scss");
 __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/admin/music_data.scss */"./resources/sass/admin/music_data.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/user/index.scss */"./resources/sass/user/index.scss");
+__webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/user/index.scss */"./resources/sass/user/index.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/spotify-clone/resources/sass/home.scss */"./resources/sass/home.scss");
 
 
 /***/ })

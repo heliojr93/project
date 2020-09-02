@@ -15,7 +15,7 @@ mix.js('resources/js/app.js', 'public/js').sourceMaps()
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin/adminlte.scss', 'public/css')    
     .sass('resources/sass/admin/music_data.scss', 'public/css')
-    .sass('resources/sass/user/index.scss', 'public/css/user');
+    .sass('resources/sass/user/index.scss', 'public/css/user')
     .sass('resources/sass/home.scss', 'public/css');
 
     

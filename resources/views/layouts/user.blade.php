@@ -29,6 +29,33 @@
     </head>
     <body>
         
+        <input type="checkbox" id="check">
+        <header>
+            <label for="check">
+                <i class='fas fa-bars' id="sidebar_btn"></i>
+            </label>
+            <div class='header-logo'>Musics <span class='title'>Random</span></div>
+            <div class='header-left'>
+                <a class="logar" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                     @csrf
+                </form>
+            </div>
+        </header>
+        <div class='sidebar'>
+            <center>
+                <form method='post' action="{{action('Admin\UserController@profile')}}" enctype='multipart/form-data'>
+                    <input type='file' name='profile_image'>
+                    {{ csrf_field() }}
+                    <input type='submit' value='プロフィール画像を編集'>
+                </form>
+                {--<h4>"{{$user->name}}"</h4>--}
+            </center>
+            <a  href='#'><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
+            <a  href='#'><i class='fas fa-splotch'></i><span>お気に入り</span></a>
+            <a  href='#'><i class='fa fa-question-circle'></i><span>Music-Ramdomについて</span></a>
+        </div>
+        <div class='content'></div>
         <main>
             {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
             @yield('content')

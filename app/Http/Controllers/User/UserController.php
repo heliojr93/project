@@ -18,9 +18,20 @@ class UserController extends Controller
             } else {
                 // それ以外はすべてのニュースを取得する
                 $musics_data = Music::all();
-     }
+    }
         
         return view('user.index',['musics_data'=>$musics_data,'cond_title'=>$cond_title]);
         
     }
+    public function profile(Request $request){
+       $user=new User;
+        $form=$request->all();
+        //データを保存する
+        $user->fill($form);
+         //音楽保存
+        $path = $request->file('profile_image')->store('public/profile_image');
+        $music->profile_image = basename($path);
+        $music->save();
+    }
+    
 }

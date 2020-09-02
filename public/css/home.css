@@ -1,5 +1,5 @@
 .header {
-  background-color: #1C1E22;
+  background-color: #000000;
   height: 90px;
   color: white;
   z-index: 10;
@@ -106,5 +106,9 @@ footer {
   float: left;
   padding: 20px 10px;
   color: white;
+}
+
+span {
+  color: #1BC5DE;
 }
 

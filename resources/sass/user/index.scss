@@ -1,99 +1,116 @@
-main{
-    margin:0;
-    padding:0;
-}
 body{
-    font-family:'Roboto', sans-serif;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding : 0;
+    font-family: 'Roboto', sans-serif;
 }
-*{
-    margin:0;
-    padding:0;
-    list-style:none;
-    text-decoration:none;
+.title{
+    color:#29BBE3;
 }
-
-.sidebar{
-    position:fixed;
-    left:-250px;
-    width:250px;
-    height:100%;
-    top:0;
-    background-color:#042331;
-    transition: all .5s ease;
+header{
+    background-color:#000000;
+    height: 80px;
+    color: white;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    position: fixed;
 }
-.sidebar header{
-    font-size:22px;
-    color:white;
-    text-align:center;
-    line-height:70px;
-    background-color:#063146;
-    user-select: none;
+.header-logo{
+    float: left;
+    font-family: fantasy;
+    padding: 20px 80px;
+    font-size: 35px;
 }
-
-.sidebar ul a{
-    display:block;
-    height:100%;
-    width:100%;
-    line-height:65px;
-    font-size:12px;
-    color:white;
-    padding-left:40px;
-    box-sizing: border-box;
-    border-top:1px solid rgba(255,255,255,.1);
-    border-bottom:1px solid black;
-    transition:.4s;
+.header-left{
+    float: right;
+}
+.logar{
+    display: block;
+    color:#29BBE3;
+    opacity: 0.7;
+    padding: 30px 18px;
+}
+.logar:hover{
+    color:#29BBE3;
+    opacity: 1;
     
 }
-
-ul li:hover a{
-    padding-left:50px;
+.sidebar{
+    background:#2F323A;
+    margin-top: 50px;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    transition: 0.5s;
+    transition-property: left;
 }
-
-.sidebar ul a i{
-    margin-right:16px;
+.sidebar .profile_image{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
 }
-#check{
-    display:none;
+.sidebar h4{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
-label #btn,label #cancel{
-    position:fixed;
-    cursor:pointer;
-    background:#042331;
-    border-radius:3px;
+.sidebar a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
 }
-label #btn{
-    left:40px;
-    top:25px;
-    font-size:35px;
-    color:white;
-    padding: 6px 12px;
-    transition: all .5s;
+.sidebar a:hover{
+    background: #19B3D3;
 }
-label #cancel{
-    z-index:1111;
-    left:-195px;
-    top:17px;
-    font-size:30px;
-    color:#0a5275;
-    padding: 4px 9px;
-    transition: all .5s ease;
+.sidebar i{
+    padding-right: 10px;
+}
+label #sidebar_btn{
+    z-index: 1;
+    color: #fff;
+    position: fixed;
+    cursor: pointer;
+    left: 10px;
+    font-size: 30px;
+    margin: 20px 0;
+    transition: 0.5s;
+    transition-property: background;
+    
+}
+label #sidebar_btn:hover{
+    color: #19B3D3;
 }
 #check:checked ~ .sidebar{
-    left:0;
+    left: -190px;
 }
-#check:checked ~ label #btn{
-    left:250px;
-    opacity:0;
-    pointer-events: none;
+#check:checked ~.sidebar a span{
+    display: none;
 }
-#check:checked ~ label #cancel{
-    left:195px;
+#check:checked ~.sidebar a{
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
 }
-section{
-    background-image:url("../images/blackground.jpg");
-    background-position:center;
-    background-size:cover;
-    height:100vh;
+.content{
+    margin-left: 250px;
+    background: url("../images/blackground.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+}
+#check:checked ~ .content{
+    margin-left: 60px;
+}
+#check{
+    display: none;
 }
