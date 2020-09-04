@@ -15,7 +15,7 @@ class AddColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //以下を追加
-            $table->string('profile_image')->default('default.png');
+            $table->string('profile_image')->default('default.jpg');
         });
     }
 

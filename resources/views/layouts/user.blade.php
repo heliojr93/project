@@ -44,12 +44,16 @@
         </header>
         <div class='sidebar'>
             <center>
-                <form method='post' action="{{action('Admin\UserController@profile')}}" enctype='multipart/form-data'>
+                <form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>
                     <input type='file' name='profile_image'>
-                    {{ csrf_field() }}
+                    @csrf
+                    
                     <input type='submit' value='プロフィール画像を編集'>
+                    
                 </form>
-                {--<h4>"{{$user->name}}"</h4>--}
+                <img class='profile_image' src="{{ asset('/storage/profile_image/$user->profile_image')}}">
+                <h4>{{$user->name}}</h4>
+                
             </center>
             <a  href='#'><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
             <a  href='#'><i class='fas fa-splotch'></i><span>お気に入り</span></a>
