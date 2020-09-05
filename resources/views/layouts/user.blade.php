@@ -51,7 +51,7 @@
                     <input type='submit' value='プロフィール画像を編集'>
                     
                 </form>
-                <img class='profile_image' src="{{ asset('/storage/profile_image/$user->profile_image')}}">
+                <img class='profile_image' src="{{ asset('/storage/profile_image/' . $user->profile_image')}}">
                 <h4>{{$user->name}}</h4>
                 
             </center>
