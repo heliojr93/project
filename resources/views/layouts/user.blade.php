@@ -44,14 +44,14 @@
         </header>
         <div class='sidebar'>
             <center>
-                <form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>
-                    <input type='file' name='profile_image'>
-                    @csrf
+                <!--<form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>-->
+                <!--    <input type='file' name='profile_image'>-->
+                <!--    @csrf-->
                     
-                    <input type='submit' value='プロフィール画像を編集'>
+                <!--    <input type='submit' value='プロフィール画像を編集'>-->
                     
-                </form>
-                <img class='profile_image' src="{{ asset('/storage/image/' . $user->profile_image')}}">
+                <!--</form>-->
+                <img class='profile_image' src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">
                 <h4>{{$user->name}}</h4>
                 
             </center>
@@ -59,7 +59,6 @@
             <a  href='#'><i class='fas fa-splotch'></i><span>お気に入り</span></a>
             <a  href='#'><i class='fa fa-question-circle'></i><span>Music-Ramdomについて</span></a>
         </div>
-        <div class='content'></div>
         <main>
             {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
             @yield('content')

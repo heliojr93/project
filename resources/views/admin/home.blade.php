@@ -35,6 +35,7 @@
                             <option value='-'>ー</option>
                             <option value='selection-list' disabled>選択リスト</option>
                             <option value='j-pop'>J-POP</option>
+                            <option value='pop'>ポップ</option>
                             <option value='rock'>ロック</option>
                             <option value='rap'>ラップ</option>
                             <option value='rip-rop'>ヒップホップ</option>
