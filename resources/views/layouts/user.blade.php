@@ -25,6 +25,7 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/user/index.css') }}" rel="stylesheet">
+        @yield('css')
         
     </head>
     <body>
@@ -55,7 +56,7 @@
                 <h4>{{$user->name}}</h4>
                 
             </center>
-            <a  href='#'><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
+            <a  href="{{action('User\UserController@music_listen')}}"><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
             <a  href='#'><i class='fas fa-splotch'></i><span>お気に入り</span></a>
             <a  href='#'><i class='fa fa-question-circle'></i><span>Music-Ramdomについて</span></a>
         </div>

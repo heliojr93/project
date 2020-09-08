@@ -46,5 +46,10 @@ class UserController extends Controller
         $user->save();
         return redirect('user/index');
     }
+    public function music_listen(){
+        $user =Auth::user();
+        $musics=Music::all();
+        return view('user.music_listen',['user'=>$user,'musics'=>$musics]);
+    }
     
 }

@@ -134,6 +134,7 @@ label #sidebar_btn:hover {
 .genero-wrapper {
   padding-bottom: 80px;
   text-align: center;
+  padding-left: 250px;
 }
 
 .heading {
@@ -145,5 +146,33 @@ label #sidebar_btn:hover {
 .genero {
   float: left;
   width: 33%;
+}
+
+.genero-icon {
+  position: relative;
+}
+
+.genero-icon img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.genero-icon a {
+  display: block;
+  color: #ccc;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.music-list {
+  padding-top: 70px;
+  color: white;
+  padding-left: 255px;
+}
+
+#check:checked ~ .genero-wrapper {
+  padding-left: -250px;
 }
 
