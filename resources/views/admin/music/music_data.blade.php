@@ -20,6 +20,7 @@
             <th width='29%'>  アーティスト名  </th>
             <th width='29%'>  曲名  </th>
             <th width='29%'>  ジャンル  </th>
+            <th width='10%'>曲</th>
         </tr>
     @foreach($musics_data as $music)
        <tr>
@@ -27,6 +28,7 @@
            <td>{{ $music->artist_name }}</td>
            <td>{{ $music->music_name }}</td>
            <td>{{ $music->genre }}</td>
+           <td>{{$music->upload_file}}</td>
            <td>
                 <div>
                     <a class='edit' href="{{action('Admin\MyProfileController@edit',['id'=>$music->id])}}">編集</a>

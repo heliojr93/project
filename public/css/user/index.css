@@ -166,13 +166,3 @@ label #sidebar_btn:hover {
   margin-bottom: 20px;
 }
 
-.music-list {
-  padding-top: 70px;
-  color: white;
-  padding-left: 255px;
-}
-
-#check:checked ~ .genero-wrapper {
-  padding-left: -250px;
-}
-
