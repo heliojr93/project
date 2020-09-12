@@ -2,14 +2,12 @@
 @section('content')
     <div class='conteudo'>
         @for($i=0;$i< count($musics);$i++)
-            <div class='music-list'>
-                <table border='1' class='music_table'>
-                    <tr>
-                        <td>{{$i+1}}|{{$musics[$i]->music_name}}</td>
-                    </tr>
-                </table>
-                <audio id='audioplayer' src="../storage/music/{{$musics[$i]->upload_file}}"  controls ></audio>
-                
+            <div class='music-lists'>
+                <div class='music-list music_list_hover'>
+                    <h5><span class='play_icon'><i class="fas fa-play"></i></span>{{$i+1}}   {{$musics[$i]->music_name}}</h5>
+                    <p>{{$musics[$i]->artist_name}}</p>
+                    <audio id='audioplayer' src="../storage/music/{{$musics[$i]->upload_file}}"  controls ></audio>
+                </div>
         @endfor
     </div>
     
@@ -37,7 +35,7 @@
         var playBtn=document.getElementById('playBtn');
         var pauseBtn=document.getElementById('pauseBtn');
         
-        pauseBtn.addEventListener('click',(i)=>{
+        pauseBtn.addEventListener('click',(e)=>{
             e.preventDefault();
             
             playBtn.style.display='inline';
@@ -56,6 +54,26 @@
             pauseBtn.style.display='inline';
         }
         
+        document.querySelectorAll('music-list').foreach(item =>{
+            item.addEventListener('click',event=>{
+                alert('clicado');
+            })
+        });
+        
+    </script>
+    <script>
+    /* global $*/
+        $(function(){
+            $('.music_list_hover').hover(
+                function(){
+                    $(this).find('.play_icon').addClass('.play_icon_active');
+                },
+                function(){
+                   $(this).find('.play_icon').removeClass('.play_icon_active');
+                }
+                );
+            
+        });
     </script>
 @section('css')
     <link href="{{ secure_asset('css/user/music_listen.css') }}" rel="stylesheet">
