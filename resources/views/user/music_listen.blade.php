@@ -3,8 +3,8 @@
     <div class='conteudo'>
         @for($i=0;$i< count($musics);$i++)
             <div class='music-lists'>
-                <div class='music-list music_list_hover'>
-                    <h5><span class='play_icon'><i class="fas fa-play"></i></span>{{$i+1}}   {{$musics[$i]->music_name}}</h5>
+                <div class='music-list'>
+                    <h5><span class='play_icon'>{{$i+1}}</span>   {{$musics[$i]->music_name}}</h5>
                     <p>{{$musics[$i]->artist_name}}</p>
                     <audio id='audioplayer' src="../storage/music/{{$musics[$i]->upload_file}}"  controls ></audio>
                 </div>
@@ -26,10 +26,16 @@
             <div class='player_control_progress2'></div>
         </div>
     </div>
-    
-    
-    
+
     <script>
+        //window.onload = function(){
+        window.alert('起動');
+        var play_icon=document.getElementsByClassName('play_icon');
+        document.querySelectorAll('music-list').foreach(item =>{
+            item.addEventListener('hover',event=>{
+                play_icon.innerHTML('<i class="fas fa-play"></i>');
+            })
+        });
         var audioPlayer=document.getElementById('audioplayer');
         var loaded=false;
         var playBtn=document.getElementById('playBtn');
@@ -40,6 +46,7 @@
             
             playBtn.style.display='inline';
             pauseBtn.style.display='none';
+            audioPlayer.pause();
             return false;
         });
         
@@ -56,24 +63,10 @@
         
         document.querySelectorAll('music-list').foreach(item =>{
             item.addEventListener('click',event=>{
-                alert('clicado');
+                alert('クリック');
             })
         });
-        
-    </script>
-    <script>
-    /* global $*/
-        $(function(){
-            $('.music_list_hover').hover(
-                function(){
-                    $(this).find('.play_icon').addClass('.play_icon_active');
-                },
-                function(){
-                   $(this).find('.play_icon').removeClass('.play_icon_active');
-                }
-                );
-            
-        });
+        //};    
     </script>
 @section('css')
     <link href="{{ secure_asset('css/user/music_listen.css') }}" rel="stylesheet">

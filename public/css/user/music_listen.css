@@ -1,12 +1,5 @@
-@charset "UTF-8";
-
 .play_icon {
-  display: none;
   color: #2ABBE3;
-}
-
-.play_icon_active {
-  display: block;
 }
 
 .conteudo {
