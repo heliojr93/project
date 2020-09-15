@@ -1,4 +1,5 @@
 @extends('layouts.user')
+@section('title','Music Random')
 @section('content')
     <div class='genero-wrapper'>
         <div class='container'>

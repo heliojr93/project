@@ -16,7 +16,8 @@
          {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
         <!--jqueryの導入-->
-        <script　src="https://code.jquery.com/jquery-3.3.1.min.js"　integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+        {{--<script　src="https://code.jquery.com/jquery-3.3.1.min.js"　integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>--}}
+        
         <!-- Fonts -->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">

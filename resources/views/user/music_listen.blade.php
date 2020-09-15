@@ -1,13 +1,15 @@
 @extends('layouts.user')
+@section('title','Music Random')
 @section('content')
     <div class='conteudo'>
         @for($i=0;$i< count($musics);$i++)
             <div class='music-lists'>
                 <div class='music-list'>
-                    <h5><span class='play_icon'>{{$i+1}}</span>   {{$musics[$i]->music_name}}</h5>
+                    <h5><span class='play_icon'><i class="fas fa-play"></i></span>{{$i+1}}   {{$musics[$i]->music_name}}</h5>
                     <p>{{$musics[$i]->artist_name}}</p>
                     <audio id='audioplayer' src="../storage/music/{{$musics[$i]->upload_file}}"  controls ></audio>
                 </div>
+            </div>
         @endfor
     </div>
     
@@ -26,13 +28,28 @@
             <div class='player_control_progress2'></div>
         </div>
     </div>
-
+    <script>
+    /* global $*/
+        $(document).ready(function(){
+            $('.music-list').hover(
+                function(){
+                    $('.play_icon').fadeIn();
+                    
+                },
+                function(){
+                   $('.play_icon').fadeOut();
+                 　
+                }
+                );
+            
+        });
+    </script>
     <script>
         //window.onload = function(){
         window.alert('起動');
         var play_icon=document.getElementsByClassName('play_icon');
-        document.querySelectorAll('music-list').foreach(item =>{
-            item.addEventListener('hover',event=>{
+        document.querySelectorAll('music-list').forEach(item =>{
+            item.addEventListener('mouseover',event=>{
                 play_icon.innerHTML('<i class="fas fa-play"></i>');
             })
         });
@@ -61,7 +78,7 @@
             pauseBtn.style.display='inline';
         }
         
-        document.querySelectorAll('music-list').foreach(item =>{
+        document.querySelectorAll('music-list').forEach(item =>{
             item.addEventListener('click',event=>{
                 alert('クリック');
             })
