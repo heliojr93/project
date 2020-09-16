@@ -48,13 +48,15 @@
         </header>
         <div class='sidebar'>
             <center>
-                <!--<form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>-->
-                <!--    <input type='file' name='profile_image'>-->
-                <!--    @csrf-->
-                    
-                <!--    <input type='submit' value='プロフィール画像を編集'>-->
-                    
-                <!--</form>-->
+                @if($user->profile_image==0)
+                    <form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>
+                        <input type='file' name='profile_image'>
+                        @csrf
+                        
+                        <input type='submit' value='プロフィール画像を編集'>
+                        
+                    </form>
+                @endif
                 <img class='profile_image' src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">
                 <h4>{{$user->name}}</h4>
                 

@@ -31,7 +31,7 @@
     
     <script>
         //window.onload = function(){
-        window.alert('起動');
+        //window.alert('起動');
         var play_icon=document.getElementsByClassName('play_icon');
         // document.querySelectorAll('.music-list').forEach(item =>{
         //     item.addEventListener('mouseover',event=>{
@@ -39,12 +39,12 @@
         //     })
         // });
         
-        for( var $i = 0; $i < play_icon.length; $i++ ) {
-        	var elem = play_icon[$i];
-        	elem.addEventListener("mouseover", function (event) {
-          		event.target.innerHTML = '<i class="fas fa-play"></i>';
-    	}, false);
-  	}
+    //     for( var $i = 0; $i < play_icon.length; $i++ ) {
+    //     	var elem = play_icon[$i];
+    //     	elem.addEventListener("mouseover", function (event) {
+    //       		event.target.innerHTML = '<i class="fas fa-play"></i>';
+    // 	}, false);
+  	//}
         var audioPlayer=document.getElementById('audioplayer');
         var loaded=false;
         var playBtn=document.getElementById('playBtn');
