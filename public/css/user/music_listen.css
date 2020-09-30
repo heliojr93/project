@@ -1,5 +1,6 @@
 .play_icon {
   color: #2ABBE3;
+  display: none;
 }
 
 .conteudo {
@@ -79,5 +80,17 @@ audio {
   height: 7px;
   border-radius: 8px;
   background-color: white;
+}
+
+#audioplayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -999;
+  opacity: 0;
+}
+
+#player_artist {
+  color: white;
 }
 

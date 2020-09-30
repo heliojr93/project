@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/user/index','User\UserController@index');
     Route::post('/user/index','User\UserController@profile');
     Route::get('/user/music_listen','User\UserController@music_listen');
+    
 
 });
 Route::group(['prefix' => 'admin'], function() {

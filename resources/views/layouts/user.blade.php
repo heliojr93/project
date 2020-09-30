@@ -16,7 +16,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 
          {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
-        <script src="{{ secure_asset('js/app.js') }}" defer></script>
+        <script src="{{ secure_asset('js/app.js') }}" ></script>
         <!--jqueryの導入-->
         <!--<script　src="https://code.jquery.com/jquery-3.3.1.min.js"　integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>-->
         <!-- Fonts -->
@@ -62,7 +62,6 @@
                 
             </center>
             <a  href="{{action('User\UserController@music_listen')}}"><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
-            <a  href='#'><i class='fas fa-splotch'></i><span>お気に入り</span></a>
             <a  href='#'><i class='fa fa-question-circle'></i><span>Music-Ramdomについて</span></a>
         </div>
         <main>
