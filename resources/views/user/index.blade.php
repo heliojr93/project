@@ -10,43 +10,43 @@
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/j-pop.jpg')}}">
-                        <a href='#'>J-POP</a>
+                        <a href="{{action('User\GenreController@jpop', ["genre"=>'j-pop'])}}">J-POP</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/pop.jpg')}}">
-                        <a href='#'>ポップ</a>
+                        <a href="{{action('User\GenreController@pop', ["genre"=>'pop'])}}">ポップ</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/rock.jpg')}}">
-                        <a href='#'>ロック</a>
+                        <a href="{{action('User\GenreController@rock', ["genre"=>'rock'])}}">ロック</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/rap.jpg')}}">
-                        <a href='#'>ラップ</a>
+                        <a href="{{action('User\GenreController@rap', ["genre"=>'rap'])}}">ラップ</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/hiphop.jpg')}}">
-                        <a href='#'>ヒップホップ</a>
+                        <a href="{{action('User\GenreController@riprop', ["genre"=>'rip-rop'])}}">ヒップホップ</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/classic.jpg')}}">
-                        <a href='#'>クラシック</a>
+                        <a href="{{action('User\GenreController@classic', ["genre"=>'classic'])}}">クラシック</a>
                     </div>
                 </div>
                 <div class='genero'>
                     <div class='genero-icon'>
                         <img src="{{asset('../images/jazz.jpg')}}">
-                        <a href='#'>ジャズ</a>
+                        <a href="{{action('User\GenreController@jazz', ["genre"=>'jazz'])}}">ジャズ</a>
                     </div>
                 </div>
             </div>

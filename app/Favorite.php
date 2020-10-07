@@ -3,8 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Music;
+use App\User;
 
-class favorite extends Model
+class Favorite extends Model
 {
-    //
+    
+
 }

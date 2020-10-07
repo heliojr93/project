@@ -1,32 +1,33 @@
 @extends('layouts.user')
 @section('title','Music Random')
 @section('content')
+    
     <div class='conteudo'>
-        @for($i=0;$i< count($musics);$i++)
+        @foreach($music_jpops as $music_genre)
             <div class='music-lists'>
                 <div class='music-list'>
-                    <h5 ><span class='play_icon'>{{$i+1}}</span> {{$musics[$i]->music_name}}</h5>
-                    <p>{{$musics[$i]->artist_name}}</p>
+                    <h5 ><span class='play_icon'>{{$count}}</span> {{$music_genre->music_name}}</h5><p id='time'></p>
                     
+                    <p>{{$music_genre->artist_name}}</p>
                     
-                    <input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $musics[$i]->upload_file) }}">
-                    <input class='artist_name' type="hidden" name="filePath" value="{{$musics[$i]->artist_name}}">
-                    <input class='music_name' type="hidden" name="filePath" value="{{$musics[$i]->music_name}}">
-                    <input class='number' type="hidden" name="filePath" value="{{$i+1}}">
+                    <input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $music_genre->upload_file) }}">
+                    <input class='artist_name' type="hidden" name="filePath" value="{{$music_genre->artist_name}}">
+                    <input class='music_name' type="hidden" name="filePath" value="{{$music_genre->music_name}}">
+                    <input class='number' type="hidden" name="filePath" value="{{$count}}">
                 </div>
-                @if (Auth::user()->is_favorite($musics[$i]->id))
+                @if (Auth::user()->is_favorite($music_genre->id))
                         {{-- お気に入りボタンのフォーム --}}
-                        {!! Form::open(['route' => ['unfavorite', $musics[$i]->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['unfavorite', $music_genre->id], 'method' => 'delete']) !!}
                         {!! Form::button('<i class="fas fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
                         {!! Form::close() !!}
                         @else
                         {{-- お気に入り外すボタンのフォーム --}}
-                        {!! Form::open(['route' => ['favorite', $musics[$i]->id]]) !!}
+                        {!! Form::open(['route' => ['favorite', $music_genre->id]]) !!}
                         {!! Form::button('<i class="far fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
                         {!! Form::close() !!}
                 @endif
             </div>
-        @endfor
+        @endforeach
     </div>
     
     <div class='player'>
@@ -69,11 +70,14 @@
             audioStop();
         });
         
+        $('.music-list').on('hover', function(){
+            var filePath = $(this).find('.file_path').get(0).value;
+            document.getElementById('time').innerHTML=filePath.duration;
+        });
         // 曲リスト押下時の処理
         $('.music-list').on('click', function() {
             // 再生表示をリセット
             resetPlayIcon();
-            
             // 再生表示を付与
             $($(this).find('.play_icon').get(0)).html('<i class="fas fa-play"></i>');
             
@@ -167,15 +171,18 @@
         function stopProgressiveBar() {
             clearInterval(progressiveBar);
         }
+        function getDuration(){
+            
+        }
+        
+        
 
     </script>
     
     
     
 @section('css')
-    
     <link href="{{ secure_asset('css/user/music_listen.css') }}" rel="stylesheet">
-    
     
 @stop
 

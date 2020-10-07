@@ -40,7 +40,18 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/user/index','User\UserController@index');
     Route::post('/user/index','User\UserController@profile');
     Route::get('/user/music_listen','User\UserController@music_listen');
-    
+    Route::get('/user/genre_jpop','User\GenreController@jpop');
+    Route::get('/user/genre_pop','User\GenreController@pop');
+    Route::get('/user/genre_rock','User\GenreController@rock');
+    Route::get('/user/genre_rap','User\GenreController@rap');
+    Route::get('/user/genre_riprop','User\GenreController@riprop');
+    Route::get('/user/genre_classic','User\GenreController@classic');
+    Route::get('/user/genre_jazz','User\GenreController@jazz');
+    //Route::post('favorite', 'User\FavoritesController@store')->name('user.favorite');
+    Route::post('favorite/{id}', 'User\FavoritesController@store')->name('favorite');
+    //Route::delete('unfavorite', 'User\FavoritesController@destroy')->name('user.unfavorite');
+    Route::delete('unfavorite/{id}', 'User\FavoritesController@destroy')->name('unfavorite');
+    Route::get('/user/favorites','User\FavoritesController@index');
 
 });
 Route::group(['prefix' => 'admin'], function() {

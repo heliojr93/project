@@ -1,3 +1,15 @@
+.like {
+  color: white;
+}
+
+.fas fa-heart {
+  color: red;
+}
+
+#time {
+  color: white;
+}
+
 .play_icon {
   color: #2ABBE3;
   display: none;
@@ -7,6 +19,8 @@
   padding-top: 100px;
   padding-left: 255px;
   cursor: pointer;
+  height: 700px;
+  overflow: scroll;
 }
 
 .music_table {
@@ -44,6 +58,8 @@ audio {
   bottom: 0;
   display: flex;
   background-color: #3c3c3c;
+  float: bottom;
+  overflow: hidden;
 }
 
 .player_artist {

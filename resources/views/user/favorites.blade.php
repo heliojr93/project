@@ -1,33 +1,24 @@
 @extends('layouts.user')
 @section('title','Music Random')
 @section('content')
-    <div class='conteudo'>
-        @for($i=0;$i< count($musics);$i++)
-            <div class='music-lists'>
-                <div class='music-list'>
-                    <h5 ><span class='play_icon'>{{$i+1}}</span> {{$musics[$i]->music_name}}</h5>
-                    <p>{{$musics[$i]->artist_name}}</p>
-                    
-                    
-                    <input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $musics[$i]->upload_file) }}">
-                    <input class='artist_name' type="hidden" name="filePath" value="{{$musics[$i]->artist_name}}">
-                    <input class='music_name' type="hidden" name="filePath" value="{{$musics[$i]->music_name}}">
-                    <input class='number' type="hidden" name="filePath" value="{{$i+1}}">
+    @if($favoritos==true)
+        <div class='conteudo'>
+            @for($i=0;$i< count($musics);$i++)
+                <div class='music-lists'>
+                    <div class='music-list'>
+                        <h5 ><span class='play_icon'>{{$i+1}}</span> {{$musics[$i]->music_name}}</h5>
+                        <p>{{$musics[$i]->artist_name}}</p>
+                        
+                        
+                        <input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $musics[$i]->upload_file) }}">
+                        <input class='artist_name' type="hidden" name="filePath" value="{{$musics[$i]->artist_name}}">
+                        <input class='music_name' type="hidden" name="filePath" value="{{$musics[$i]->music_name}}">
+                        <input class='number' type="hidden" name="filePath" value="{{$i+1}}">
+                    </div>
                 </div>
-                @if (Auth::user()->is_favorite($musics[$i]->id))
-                        {{-- お気に入りボタンのフォーム --}}
-                        {!! Form::open(['route' => ['unfavorite', $musics[$i]->id], 'method' => 'delete']) !!}
-                        {!! Form::button('<i class="fas fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
-                        {!! Form::close() !!}
-                        @else
-                        {{-- お気に入り外すボタンのフォーム --}}
-                        {!! Form::open(['route' => ['favorite', $musics[$i]->id]]) !!}
-                        {!! Form::button('<i class="far fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
-                        {!! Form::close() !!}
-                @endif
-            </div>
-        @endfor
-    </div>
+            @endfor
+        </div>
+    @endif
     
     <div class='player'>
         <div id ='player_artist'>
