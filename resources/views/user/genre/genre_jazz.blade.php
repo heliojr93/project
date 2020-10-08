@@ -18,12 +18,12 @@
                 @if (Auth::user()->is_favorite($music_genre->id))
                         {{-- お気に入りボタンのフォーム --}}
                         {!! Form::open(['route' => ['unfavorite', $music_genre->id], 'method' => 'delete']) !!}
-                        {!! Form::button('<i class="fas fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
+                        {!! Form::button('<i class="fas fa-heart heart_red"></i>', ['class' => "btn", 'type' => 'submit']) !!}
                         {!! Form::close() !!}
                         @else
                         {{-- お気に入り外すボタンのフォーム --}}
                         {!! Form::open(['route' => ['favorite', $music_genre->id]]) !!}
-                        {!! Form::button('<i class="far fa-heart"></i>', ['class' => "btn", 'type' => 'submit']) !!}
+                        {!! Form::button('<i class="far fa-heart heart_red"></i>', ['class' => "btn", 'type' => 'submit']) !!}
                         {!! Form::close() !!}
                 @endif
             </div>

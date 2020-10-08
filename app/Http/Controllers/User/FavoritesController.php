@@ -36,8 +36,10 @@ class FavoritesController extends Controller
         $user =Auth::user();
         $musics=Music::all();
         $music=Music::find($request->id);
+        $musics_like=$user->favoritesMusics;
+        $count=$musics_like->count();
         
-        return view('user.favorites',['user'=>$user,'musics'=>$musics,'music'=>$music,'favoritos'=>$favoritos]);
+        return view('user.favorites',['user'=>$user,'musics'=>$musics,'music'=>$music,'musics_like'=>$musics_like,'count'=>$count]);
         
     }
 }
