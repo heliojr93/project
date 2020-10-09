@@ -57,7 +57,7 @@
                         
                     </form>
                 @endif
-                <img class='profile_image' src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">
+                <img class='profile_image' src="{{$user->profile_image}}">
                 <h4>{{$user->name}}</h4>
                 
             </center>
