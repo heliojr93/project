@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Music;
 use App\User;
+use Storage;
 
 
 class UserController extends Controller
@@ -33,8 +34,10 @@ class UserController extends Controller
         //$user->fill($form);
         //音楽保存
         if (isset($form['profile_image'])) {
-            $path = $request->file('profile_image')->store('public/profile_image');
-            $user->profile_image = basename($path);
+            // $path = $request->file('profile_image')->store('public/profile_image');
+            // $user->profile_image = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['profile_image'],'public');
+            $user->profile_image = Storage::disk('s3')->url($path);
         }else {
           $user->profile_image = null;
         }
