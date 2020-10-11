@@ -23,8 +23,10 @@ class MyProfileController extends Controller
         //データを保存する
         $music->fill($form);
          //音楽保存
-        $path = $request->file('upload_file')->store('public/music');
-        $music->upload_file = basename($path);
+        // $path = $request->file('upload_file')->store('public/music');
+        // $music->upload_file = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['upload_file'],'public/music');
+        $user->upload_file = Storage::disk('s3')->url($path);
         $music->save();
        
     
