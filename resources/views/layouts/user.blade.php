@@ -58,9 +58,13 @@
                     </form>
                 @endif
                 <img class='profile_image' src="{{$user->profile_image}}">
+                <!--<img class='profile_image' src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">-->
                 <h4>{{$user->name}}</h4>
                 
             </center>
+            <script>
+                
+            </script>
             <a href="{{action('User\UserController@index')}}" <i class="fas fa-home"></i><span>ホーム</span>
             <a  href="{{action('User\UserController@music_listen')}}"><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
             <a href="{{action('User\FavoritesController@index')}}" <i class="fas fa-heart"></i><span>お気に入り</span>
