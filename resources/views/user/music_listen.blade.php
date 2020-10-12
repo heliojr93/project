@@ -10,7 +10,7 @@
                     
                     
                     <!--<input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $musics[$i]->upload_file) }}">-->
-                    <input class='file_path' type="hidden" name="filePath" value="{{$musics[$i]->upload_file }}">
+                    <input class='file_path' type="hidden" name="filePath" value="{{'https://projecthelio.s3.us-east-2.amazonaws.com/' . $musics[$i]->upload_file }}">
                     <input class='artist_name' type="hidden" name="filePath" value="{{$musics[$i]->artist_name}}">
                     <input class='music_name' type="hidden" name="filePath" value="{{$musics[$i]->music_name}}">
                     <input class='number' type="hidden" name="filePath" value="{{$i+1}}">
