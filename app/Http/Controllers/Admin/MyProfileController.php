@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Music;
 use App\User;
+use Storage;
 
 class MyProfileController extends Controller
 {
@@ -25,8 +26,11 @@ class MyProfileController extends Controller
          //音楽保存
         // $path = $request->file('upload_file')->store('public/music');
         // $music->upload_file = basename($path);
+        
         $path = Storage::disk('s3')->putFile('/',$form['upload_file'],'public');
-        $music->upload_file = Storage::disk('s3')->url($path);
+        
+        $music->upload_file = $path;
+        //$music->upload_file = asename($path);
         $music->save();
        
     
