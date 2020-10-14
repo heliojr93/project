@@ -50,26 +50,35 @@
             <center>
                 
                     <form method='post' action="{{action('User\UserController@profile')}}" enctype='multipart/form-data'>
-                        <input type='file' name='profile_image'>
+                        <input id='file' type='file' name='profile_image'>
                         @csrf
                         
-                        <input type='submit' value='プロフィール画像を編集'>
+                        <input id='upload_id' class='upload' type='submit' value='プロフィール画像の変更'>
+                        
                         
                     </form>
-                
-                
-                <!--<img class='profile_image' src="neutral_image.png">-->
-                <img class='profile_image' src="{{$user->profile_image}}">
-                <!--<img class='profile_image' src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">-->
-                <h4>{{$user->name}}</h4>
+                    <img class='profile_image' src="{{$user->profile_image}}">
+                    <!--<img class='profile_image'e src="{{ asset('storage/profile_image/' .  $user->profile_image)}}">-->
+                    <h4>{{$user->name}}</h4>
                 
             </center>
             <script>
+                window.onload = function() {
+                    $(".profile_image").on('click',function(){
+                        $('#file').click();
+                    });
+                    $("#file").on("click",function(){
+                        
+                        $('#upload_id').removeClass('upload');
+                        $('#upload_id').addClass('upload_on');
+                    });
+                   
+                };
                 
             </script>
-            <a href="{{action('User\UserController@index')}}" <i class="fas fa-home"></i><span>ホーム</span>
+            <a href="{{action('User\UserController@index')}}"> <i class="fas fa-home"></i><span>ホーム</span></a>
             <a  href="{{action('User\UserController@music_listen')}}"><i class='fas fa-headphones'></i><span>今すぐ聞こう</span></a>
-            <a href="{{action('User\FavoritesController@index')}}" <i class="fas fa-heart"></i><span>お気に入り</span>
+            <a href="{{action('User\FavoritesController@index')}}"> <i class="fas fa-heart"></i><span>お気に入り</span></a>
             <a  href='#'><i class='fa fa-question-circle'></i><span>Music-Ramdomについて</span></a>
         </div>
         <main>

@@ -37,10 +37,10 @@
         </div>
         <div class='player_control'>
             <div class='player_control_buttoms'>
-                <a href=''><i class='fas fa-backward'></i></a>
+                <a href='#'　id='backward'><i class='fas fa-backward'></i></a>
                 <a style='display:none' id='pauseBtn' href='#'><i class='fa fa-pause-circle'></i></a>
                 <a id='playBtn' href='#'><i class='fa fa-play-circle'></i></a>
-                <a href=''><i class='fas fa-forward'></i></a>
+                <a href='#' id='forward'><i class='fas fa-forward'></i></a>
         </div>
         <div class='player_control_progress'>
             <div class='player_control_progress2'></div>
@@ -58,7 +58,47 @@
         var pauseBtn= $("#pauseBtn").get(0);
         var loaded = false;
         var progressiveBar;
-        
+        var music_number=0
+        //次の曲があれば再生
+        $('#forward').on('click', function() {
+            var number=music_number+1;
+            var filePath = '';
+            var artistName = '';
+            var musicName = '';
+            
+            $('.music-list').each(function(){
+                if(number == $(this).find('.number').get(0).value){
+                    filePath = $(this).find('.file_path').get(0).value;
+                    artistName = $(this).find('.artist_name').get(0).value;
+                    musicName = $(this).find('.music_name').get(0).value;
+                }
+            
+               
+            })
+            if(filePath!=''){
+                playSong(filePath, artistName, musicName, number);
+            }
+        });
+        //前の曲を再生する
+        $('#backward').on('click', function() {
+            var number=music_number-1;
+            var filePath = '';
+            var artistName = '';
+            var musicName = '';
+            
+            $('.music-list').each(function(){
+                if(number == $(this).find('.number').get(0).value){
+                    filePath = $(this).find('.file_path').get(0).value;
+                    artistName = $(this).find('.artist_name').get(0).value;
+                    musicName = $(this).find('.music_name').get(0).value;
+                }
+            
+               
+            })
+            if(filePath!=''){
+                playSong(filePath, artistName, musicName, number);
+            }
+        });
         // オーディオプレイヤー再生ボタン押下時の処理
         $('#playBtn').on('click', function() {
             if (loaded) {
@@ -91,6 +131,7 @@
         // 曲を設定して再生
         function playSong(filePath, artistName, musicName, number) {
             var player_artist = $("#player_artist").get(0);
+            music_number=parseInt(number);
 
             // 曲を読込
             audioPlayer.innerHTML=`<source src="` + filePath + `" types="audio/mp3">`;

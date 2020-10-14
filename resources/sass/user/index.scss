@@ -148,4 +148,18 @@ label #sidebar_btn:hover{
 }
 .profile_image{
     margin-top: 15px;
+    cursor: pointer;
+}
+#file{
+    display: none;
+}
+.upload{
+    
+    display: none;
+}
+.upload_on{
+    display: block;
+    font-size: 10px;
+    background-color: #000000;
+    color: #29BBE3;
 }

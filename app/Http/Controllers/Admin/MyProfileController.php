@@ -30,7 +30,7 @@ class MyProfileController extends Controller
         $path = Storage::disk('s3')->putFile('/',$form['upload_file'],'public');
         
         $music->upload_file = env("AWS_URL").$path;
-        //$music->upload_file = asename($path);
+        //$music->upload_file = basename($path);
         $music->save();
        
     
