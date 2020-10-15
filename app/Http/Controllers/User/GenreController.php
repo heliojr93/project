@@ -74,7 +74,7 @@ class GenreController extends Controller
         
         //dd($count);
         
-        return view('user.genre.genre_riprop',['user'=>$user,'musics'=>$musics,'music'=>$music,'music_riprops'=>$music_riprops, 'count'=>$count]);
+        return view('user.genre.genre_rip-rop',['user'=>$user,'musics'=>$musics,'music'=>$music,'music_riprops'=>$music_riprops, 'count'=>$count]);
     }
     public function classic(Request $request){
         //dd($request);

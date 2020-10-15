@@ -72,7 +72,10 @@
                         $('#upload_id').removeClass('upload');
                         $('#upload_id').addClass('upload_on');
                     });
-                   
+                   $('#upload_id').on('click',function(){
+                       $('#upload_id').addClass('upload');
+                       $('#upload_id').removeClass('upload_on');
+                   });
                 };
                 
             </script>

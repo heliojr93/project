@@ -37,7 +37,7 @@
         </div>
         <div class='player_control'>
             <div class='player_control_buttoms'>
-                <a href='#'　id='backward'><i class='fas fa-backward'></i></a>
+                <a href='#' id='backward'><i class='fas fa-backward'></i></a>
                 <a style='display:none' id='pauseBtn' href='#'><i class='fa fa-pause-circle'></i></a>
                 <a id='playBtn' href='#'><i class='fa fa-play-circle'></i></a>
                 <a href='#' id='forward'><i class='fas fa-forward'></i></a>
