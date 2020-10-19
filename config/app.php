@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //以下を追加
         Collective\Html\HtmlServiceProvider::class,
+        //JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        
 
         /*
          * Package Service Providers...

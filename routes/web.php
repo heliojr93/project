@@ -58,4 +58,5 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/', function () { return redirect('/admin/home'); });
     Route::get('login', 'Admin\LoginController@showloginform')->name('admin.login');
     Route::post('login', 'Admin\LoginController@login');
+    Route::post('logout', 'Admin\LoginController@logout');
  });
