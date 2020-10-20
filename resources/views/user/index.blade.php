@@ -52,4 +52,22 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            var num=0;
+            $('#check').on('click',function(){
+            $(this).data("click", ++num);
+            var click = $(this).data("click");
+            if(click % 2!=0){
+                $('.genero-wrapper').css('padding-left','0px');
+            }else if(click % 2==0){
+                $('.genero-wrapper').css('padding-left','250px');
+            }
+            
+        });
+  
+        });
+
+        
+    </script>
 @endsection
