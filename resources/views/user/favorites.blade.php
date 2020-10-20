@@ -11,7 +11,7 @@
                         
                         
                         <!--<input class='file_path' type="hidden" name="filePath" value="{{ secure_asset('storage/music/' . $music->upload_file) }}">-->
-                        <input class='file_path' type="hidden" name="filePath" value="{{$musics[$i]->upload_file }}">
+                        <input class='file_path' type="hidden" name="filePath" value="{{$music->upload_file }}">
                         <input class='artist_name' type="hidden" name="filePath" value="{{$music->artist_name}}">
                         <input class='music_name' type="hidden" name="filePath" value="{{$music->music_name}}">
                         <input class='number' type="hidden" name="filePath" value="{{$count}}">
