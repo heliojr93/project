@@ -187,7 +187,7 @@ label #sidebar_btn:hover {
   color: #29BBE3;
 }
 
-#check:checked ~ .genero-wrapper {
-  padding-left: -250px;
+#check:checked + .genero-wrapper {
+  padding-left: 0px;
 }
 

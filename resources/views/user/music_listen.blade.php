@@ -33,7 +33,7 @@
     
     <div class='player'>
         <div id ='player_artist'>
-            
+            <h1 class='kuhaku'>テスト</h1>
         </div>
         <div class='player_control'>
             <div class='player_control_buttoms'>
@@ -42,8 +42,10 @@
                 <a id='playBtn' href='#'><i class='fa fa-play-circle'></i></a>
                 <a href='#' id='forward'><i class='fas fa-forward'></i></a>
         </div>
+        <span class='range_count'></span>
         <div class='player_control_progress'>
-            <div class='player_control_progress2'></div>
+            <input type='range' step="1" min='0' max='0'class='player_control_progress2'>
+            <!--<div class='player_control_progress2'></div>-->
         </div>
     </div>
     
@@ -59,6 +61,7 @@
         var loaded = false;
         var progressiveBar;
         var music_number=0
+        var player_control = $(".player_control_progress2").get(0);
         //次の曲があれば再生
         $('#forward').on('click', function() {
             var number=music_number+1;
@@ -143,6 +146,7 @@
                 "</br><span class='play_icon'>" + number + '.</span>' +
                 '<span>' + musicName  + '</span>' + '</h3>';
             
+            
             audioPlayer.addEventListener('loadedmetadata',function(e) {
                 // 再生
                 audioPlay();
@@ -151,12 +155,22 @@
         }
         
         // オーディオ再生
+        // オーディオ再生
         function audioPlay() {
             audioPlayer.play();
+            player_control.min = 0;
+            player_control.max = audioPlayer.duration;
             startProgressiveBar();
+            
             playBtn.style.display='none';
             pauseBtn.style.display='inline';
         }
+        // function audioPlay() {
+        //     audioPlayer.play();
+        //     startProgressiveBar();
+        //     playBtn.style.display='none';
+        //     pauseBtn.style.display='inline';
+        // }
         
         // オーディオ一時停止
         function audioStop() {
@@ -191,21 +205,35 @@
         }
         
         // プログレッシブバーを動かす
-        function startProgressiveBar() {
+          function startProgressiveBar() {
             
             progressiveBar = setInterval(function() {
-                var audioTime = audioPlayer.duration;    
+                var maxTime = player_control.max;    
                 var currentTime = audioPlayer.currentTime;
+                player_control.value = currentTime;
                 
-                var percent = currentTime/audioTime * 100;
-                $('.player_control_progress2').css('width', percent + '%');
-                
-                if (percent >= 100) {
+                if (currentTime >= maxTime) {
                     stopProgressiveBar();
                 }
             }, 1);
         }
-        
+        // function startProgressiveBar() {
+            
+        //     progressiveBar = setInterval(function() {
+        //         var audioTime = audioPlayer.duration;    
+        //         var currentTime = audioPlayer.currentTime;
+                
+        //         var percent = currentTime/audioTime * 100;
+        //         $('.player_control_progress2').css('width', percent + '%');
+                
+        //         if (percent >= 100) {
+        //             stopProgressiveBar();
+        //         }
+        //     }, 1);
+        // }
+        $('.player_control_progress2').on('input change', function() {
+            audioPlayer.currentTime = player_control.value;
+        });
         // プログレッシブバーを止める
         function stopProgressiveBar() {
             clearInterval(progressiveBar);

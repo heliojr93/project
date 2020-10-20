@@ -163,6 +163,9 @@ label #sidebar_btn:hover{
     background-color: #000000;
     color: #29BBE3;
 }
-#check:checked ~ .genero-wrapper{
-    padding-left: -250px;
+// #check:checked ~ .genero-wrapper{
+//     padding-left: -250px;
+// }
+#check:checked + .genero-wrapper{
+    padding-left: 0px;
 }
