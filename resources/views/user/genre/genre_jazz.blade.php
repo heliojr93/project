@@ -33,7 +33,7 @@
     
     <div class='player'>
         <div id ='player_artist'>
-            
+            <h1 class='kuhaku'>テスト</h1>
         </div>
         <div class='player_control'>
             <div class='player_control_buttoms'>
@@ -42,8 +42,10 @@
                 <a id='playBtn' href='#'><i class='fa fa-play-circle'></i></a>
                 <a href='#' id='forward'><i class='fas fa-forward'></i></a>
         </div>
+        <span class='range_count'></span>
         <div class='player_control_progress'>
-            <div class='player_control_progress2'></div>
+            <input type='range' step="1" min='0' max='0'class='player_control_progress2'>
+            <!--<div class='player_control_progress2'></div>-->
         </div>
     </div>
     
