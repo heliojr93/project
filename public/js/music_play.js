@@ -4,11 +4,14 @@
         var pauseBtn= $("#pauseBtn").get(0);
         var loaded = false;
         var progressiveBar;
-        var music_number=0
+        var music_number=0;
         var player_control = $(".player_control_progress2").get(0);
         //次の曲があれば再生
         $('#forward').on('click', function() {
             var number=music_number+1;
+            while(filePath==''){
+                number+=1;
+            }
             var filePath = '';
             var artistName = '';
             var musicName = '';
@@ -21,7 +24,7 @@
                 }
             
                
-            })
+            });
             if(filePath!=''){
                 playSong(filePath, artistName, musicName, number);
             }

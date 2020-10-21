@@ -3,7 +3,7 @@
 @section('content')
     
         <div class='conteudo'>
-            @foreach($musics_like as $music)
+            @foreach($musics_like as $index=>$music)
                 <div class='music-lists'>
                     <div class='music-list'>
                         <h5 ><span class='play_icon'>{{$count}}</span> {{$music->music_name}}</h5>
@@ -14,7 +14,7 @@
                         <input class='file_path' type="hidden" name="filePath" value="{{$music->upload_file }}">
                         <input class='artist_name' type="hidden" name="filePath" value="{{$music->artist_name}}">
                         <input class='music_name' type="hidden" name="filePath" value="{{$music->music_name}}">
-                        <input class='number' type="hidden" name="filePath" value="{{$count}}">
+                        <input class='number' type="hidden" name="filePath" value="{{$index}}">
                     </div>
                     @if (Auth::user()->is_favorite($music->id))
                         {{-- お気に入りボタンのフォーム --}}
